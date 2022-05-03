@@ -11,7 +11,7 @@ jobs:
       - id: auth
         uses: google-github-actions/auth@v0.4.0
         with:
-          workload_identity_provider: 'https://iam.googleapis.com/projects/427443496167/locations/global/workloadIdentityPools/github-gcp-wif/providers/github-provider'
+          workload_identity_provider: '//iam.googleapis.com/projects/427443496167/locations/global/workloadIdentityPools/github-gcp-wif/providers/github-provider'
           service_account: 'github-gcp-wif@mess-up-laoy.iam.gserviceaccount.com'
 
       - name: list compute instances
