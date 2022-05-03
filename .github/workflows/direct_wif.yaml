@@ -17,4 +17,4 @@ jobs:
       - name: list compute instances
         run: |
           gcloud compute instances list
-          gcloud compute instances create instance-yy --project=mess-up-laoy --zone=us-central1-a --machine-type=n1-standard-1 --network-interface=subnet=default,no-address --shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring
+          gcloud compute instances create instance-xx --project=mess-up-laoy --zone=us-central1-a --machine-type=n1-standard-1 --network-interface=subnet=default,no-address --shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring
