@@ -23,8 +23,6 @@ jobs:
           echo $ID_TOKEN > idtoken.txt
       - name: Read idtoken
         id: githubtoken
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: idtoken.txt
+        run: echo ::set-output name=githubtoken::$(cat idtoken.txt)
       - name: Echo githubtoken
         run: echo "${{ steps.githubtoken.outputs.content }}"
