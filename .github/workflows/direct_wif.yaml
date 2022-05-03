@@ -15,4 +15,6 @@ jobs:
           service_account: 'github-gcp-wif@mess-up-laoy.iam.gserviceaccount.com'
 
       - name: list compute instances
-        run: gcloud compute instances list
+        run: |
+          gcloud compute instances list
+          gcloud alpha storage ls
