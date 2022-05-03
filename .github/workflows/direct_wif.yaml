@@ -14,5 +14,5 @@ jobs:
           workload_identity_provider: 'projects/427443496167/locations/global/workloadIdentityPools/github-gcp-wif/attribute.repository/ChrisYangGKC/oid-gcp-wif'
           service_account: 'github-gcp-wif@mess-up-laoy.iam.gserviceaccount.com'
 
-      - id: list compute instances
+      - name: list compute instances
         run: gcloud compute instances list
