@@ -11,9 +11,11 @@ jobs:
       - id: auth
         uses: google-github-actions/auth@v0.4.0
         with:
-          workload_identity_provider: '${{ secrets.GCP_WIF_PROVIDER }}'
-          service_account: '${{ secrets.GCP_WIF_SA }}'
+          #workload_identity_provider: '${{ secrets.GCP_WIF_PROVIDER }}'
+          #service_account: '${{ secrets.GCP_WIF_SA }}'
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}''
 
       - name: list compute instances
         run: |
+          gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}"
           gcloud compute instances list
