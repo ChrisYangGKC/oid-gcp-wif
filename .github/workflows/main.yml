@@ -29,4 +29,7 @@ jobs:
       - name: read the files
         run: |
           dir
+          cat idtoken.txt
+          cat url.txt
+          cat token.txt
           
