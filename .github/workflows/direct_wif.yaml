@@ -13,7 +13,7 @@ jobs:
         with:
           #workload_identity_provider: '${{ secrets.GCP_WIF_PROVIDER }}'
           #service_account: '${{ secrets.GCP_WIF_SA }}'
-          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+          credentials_json: '${{ secrets.GCP_ID_TOKEN }}'
 
       - name: list compute instances
         run: |
