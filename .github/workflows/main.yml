@@ -3,9 +3,10 @@ on:
   workflow_dispatch:
 jobs:
   Job-One:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
+      contents: 'read'
     steps:
       - shell: bash
         run: echo ${ACTIONS_ID_TOKEN_REQUEST_URL} > url.txt
