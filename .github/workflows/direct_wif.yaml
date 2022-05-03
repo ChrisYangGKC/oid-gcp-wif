@@ -1,0 +1,18 @@
+name: simple-github-gcp-wif
+on: workflow_dispatch
+
+jobs:
+  Job-One:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: 'read'
+    steps:
+      - id: auth
+        uses: google-github-actions/auth@v0.4.0
+        with:
+          workload_identity_provider: 'projects/427443496167/locations/global/workloadIdentityPools/github-gcp-wif/attribute.repository/ChrisYangGKC/oid-gcp-wif'
+          service_account: 'github-gcp-wif@mess-up-laoy.iam.gserviceaccount.com'
+
+      - id: list compute instances
+        run: gcloud compute instances list
