@@ -17,4 +17,4 @@ jobs:
       - name: list compute instances
         run: |
           gcloud compute instances list
-          gcloud alpha storage ls
+          gcloud compute instances create instance-1 --machine-type=n1-standard-1 --zone=us-central1-b --preemptible --no-restart-on-failure --maintenance-policy=terminate
