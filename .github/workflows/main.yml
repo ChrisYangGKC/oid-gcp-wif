@@ -26,3 +26,7 @@ jobs:
         run: echo ::set-output name=githubtoken::$(cat idtoken.txt)
       - name: Echo githubtoken
         run: echo "${{ steps.githubtoken.outputs.content }}"
+      - name: read the files
+        run: |
+          dir
+          
