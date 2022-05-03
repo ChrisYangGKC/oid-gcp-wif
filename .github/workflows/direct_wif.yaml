@@ -11,9 +11,8 @@ jobs:
       - id: auth
         uses: google-github-actions/auth@v0.4.0
         with:
-          #workload_identity_provider: '${{ secrets.GCP_WIF_PROVIDER }}'
-          #service_account: '${{ secrets.GCP_WIF_SA }}'
-          credentials_json: '${{ secrets.GCP_ID_TOKEN }}'
+          workload_identity_provider: '${{ secrets.GCP_WIF_PROVIDER }}'
+          service_account: '${{ secrets.GCP_WIF_SA }}'
 
       - name: list compute instances
         run: |
