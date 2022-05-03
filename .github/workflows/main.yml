@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - shell: bash
-        run: echo ${ACTIONS_ID_TOKEN_REQUEST_URL} > ./tmp/url.txt
+        run: echo ${ACTIONS_ID_TOKEN_REQUEST_URL} > url.txt
       - shell: bash
-        run: echo ${ACTIONS_ID_TOKEN_REQUEST_TOKEN} > ./tmp/token.txt
+        run: echo ${ACTIONS_ID_TOKEN_REQUEST_TOKEN} > token.txt
       - id: idtoken
         shell: bash
         run: |
@@ -20,11 +20,11 @@ jobs:
           runtimeUrl="${runtimeUrl}&audience=google-wlif"
           ID_TOKEN=$(curl -H "Authorization: bearer ${token}" ${runtimeUrl} | jq -r ".value")
           echo ::set-output name=idtoken::$ID_TOKEN
-          echo $ID_TOKEN > ./tmp/idtoken.txt
+          echo $ID_TOKEN > idtoken.txt
       - name: Read idtoken
         id: githubtoken
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./tmp/idtoken.txt
+          path: idtoken.txt
       - name: Echo githubtoken
         run: echo "${{ steps.githubtoken.outputs.content }}"
